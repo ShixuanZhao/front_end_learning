@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--  //call back func是design pattern，作为参数传递到另外一个函数（回调函数）-->
+    <h1>JS Callback fuction</h1>
+  <script>
+   //  function  cb(para) {
+   //    console.log(para);
+   //  }
+   //  function  test(fn) {
+   //    console.log('test');
+   //    console.log(fn);
+   //    fn(10);
+   //  }
+   // //实现异步一定会是回调函数，回调函数可能是同步也可能是异步
+   //  test(cb);
+   //如果作为API课拓展性不高，参数局限,吧可拓展的权限交给用户，拓展乘法除法
+   // function cal(a, b, type) {
+   //   //===比较数据类型和值
+   //   if (type === '+') {
+   //     console.log(a + b);
+   //   } else if (type === '-') {
+   //     console.log(a - b);
+   //   } else {
+   //     console.log(a,b);
+   //   }
+   // }
+   //利用回调函数，易于实现拓展
+   function call(a, b, cb) {
+     return cb(a, b);
+   }
+    function  add(a, b) {
+     console.log(a + b);
+    }
+    function  mul(a, b) {
+     console.log(a * b);
+    }
+    call(1, 2, mul);
+    call(1, 2, add);
+   // cal(1, 2, '+');
+  </script>
+</body>
+</html>

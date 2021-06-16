@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    /*div {*/
+    /*    width: 100px;*/
+    /*    height: 100px;*/
+    /*    border: 10px solid blue;*/
+    /*    padding: 10px;*/
+    /*    background-color: lightblue;*/
+    /*}*/
+
+    .div1, .aa {
+      margin: 10px;
+    }
+
+    .div2, .bb {
+      margin: 20px;
+    }
+
+    .box {
+      float: left;
+      width: 100px;
+      height: 100px;
+      background-color: lightblue;
+      padding: 5px;
+      margin-left: 10px;
+    }
+    .pp {
+      background-color: #ccc;
+      padding:10px;
+    }
+    .clear {
+      clear: left;
+    }
+    /*.box1:after {*/
+    /*    content: "";*/
+    /*    display: block;*/
+    /*    clear: left;*/
+    /*}*/
+
+    .app {
+      width: 100px;
+      height: 100px;
+      background-color: lightblue;
+      padding: 5px;
+    }
+    .app1 {
+      position: relative;
+      left: 10px;
+      top: 20px;
+
+    }
+    .app2 {
+      position: absolute;
+      left: 10px;
+      top: 20px;
+    }
+
+    .ab {
+      width: 300px;
+      height: 300px;
+      border: 1px solid #ccc;
+    }
+
+    .fixed {
+      position: fixed;
+    }
+  </style>
+</head>
+<body>
+<h1>Box Model</h1>
+
+<!--    <div class="div1">-->
+<!--        I am a div1-->
+<!--    </div>-->
+
+<!--    <div class="div2">-->
+<!--        I am a div2-->
+<!--    </div>-->
+
+<!--    <span class="aa">aaa</span>-->
+<!--    <span class="bb">bbb</span>-->
+
+<p class="pp">this is a paragraph</p>
+<!--    <div class="box1">-->
+<div class="box">float</div>
+<!--    <span>123</span>-->
+
+<div class="box">float 2</div>
+<!--    </div>-->
+
+<div class="clear"></div>
+<p class="pp">this is a paragraph</p>
+
+<!--    <div class="app app1">-->
+<!--        div1-->
+<!--    </div>-->
+
+<div class="ab">
+  <div class="app app2">
+    div2
+  </div>
+</div>
+
+<div class="fixed">fixed</div>
+</body>
+</html>

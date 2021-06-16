@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Title</title>
+    <style>
+        box {
+            width: 100px;
+            height: 100px;
+            background-color: #61dafb;
+        }
+        .left {
+            float: left;
+        }
+        .right {
+            float: right;
+        }
+        .clear {
+            clear: both;
+        }
+        .ab {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #ccc;
+            // we can also use the attribute of flux to design the position of the box
+            //element.  flux-direction
+            position: absolute;
+        }
+        .d1 {
+            background-color: lightblue;
+            //z-index used to split layer for the position of anchered element
+            // used to make sticky header or popped window
+            z-index: 20;
+        }
+        .d2 {
+            background-color: lightgray;
+            z-index: 10;
+            margin-top: 10px;
+            margin-left: 20px;
+        }
+        .d3 {
+            background-color: lightpink;
+            margin-top: -10px;
+            margin-left: 40px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS</h1>
+    <div class="box left">float left</div>
+    <div class="box right">float right</div>
+    <div class="clear"></div>
+    <p>this is a footer</p>
+    <div class="ab d1">center</div>
+    <div class="ab d2">top</div>
+    <div class="ab d3">bottom</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Title</title>
+<!--    //external import-->
+    <script type="text/javascript" src="./main1.js"></script>
+</head>
+<body>
+<!--    <h1 onclick="alert('hello')">Hello JS</h1>-->
+<!--//变量声明, js是弱类型-->
+<!--//最常用类型Number, String, Boolean(primitive)-->
+    <script type="text/javascript">
+        var user = "Joe";
+        var age = "25";
+        //reference
+        // object  {k1: v1, k2: v2}
+        //array里的值的类型
+        //可以不一样 [number, string, boolean, fn, object, array]
+        //undefined: 声明华二米赋值, not defined:都没声明, null:等待被gc， 解除时间绑定，timer
+        //函数式编程思想
+        //method1: 定义和调用没有顺序问题，可以先执行，在定义
+        function myFunc(paras) {
+            console.log("this is my fn");
+            console.log(paras = 1);
+        }
+        myFunc(10);
+        //method2: var fn = function() {} 函数作为变量定义
+        //要先定义函数，在调用，否则undefined
+        //IIFE,立即执行函数：(function() {})(),就等待GC了
+        //好处：函数作用域隔离，避免定义成全区变量，同一个变量，作用域仅仅在不同的js文件
+        //call back 函数，异步：代码的书写顺序和执行书序不一致
+    </script>
+</body>
+</html>

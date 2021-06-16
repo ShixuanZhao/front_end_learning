@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--  //react is a library,声明式开发，模块（组件）式开发-->
+    <script src="https://unpkg.com/react@^16/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16.13.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+
+</head>
+<body>
+<h1>React</h1>
+
+<!--虚拟dom挂载点-->
+<div id="root"></div>
+<script type="text/babel">
+  //1.how to use react
+  //react->core->components, virtual dom, life cycle
+  //react-dom vdom dom
+  //babel compile
+  //virtual dom, diff算法,key
+  //2how to create virtual dom ele
+  // const ele1 = React.createElement('h1', {className: 'box'}, 'hello react!');
+  // render DOM
+  //3jsx  js + html
+  const el1 = <h2 className="box">hello react!!</h2>;
+  // ReactDOM.render(
+  //         ele1,
+  //         document.getElementById('app')
+  // );
+  // JS expression {}代表插入值,相同出现的子元素要加key unique
+  // const a = 10;
+  // const str = 'this is a str';
+  // const arr = [ <p key='1'>first</p>, <p key='2'>second</p>, <p key='3'>third</p> ];
+  //
+  // const ele = <div>
+  //     <p>{a}</p>
+  //     <p>{str}, {a}</p>
+  // </div>;
+  //4component
+  function Hello(props) {
+      console.log(props);
+      return <p>hello react {props.person.name}</p>
+  }
+
+  const person = {
+      name : 'Joe',
+      age : 10
+  }
+
+  ReactDOM.render(
+      <Hello person={person}/>,
+      document.getElementById('root')
+  );
+
+</script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="user common">Users:</div>
+
+<ul class="box common">
+  <li id="john">John</li>
+  <li id="peter">Peter</li>
+</ul>
+<ol id="ol">
+  <li>0</li>
+  <li>1</li>
+  <li>2</li>
+</ol>
+
+<script>
+    // js可以通过Node环境来运行，要被引入到html
+    //== windoe.a = 10. 全局变量
+    var a = 10;
+    //DOM -> window.document可以看head，dom tree
+    //getElement*
+    //怎么访问dom tree里面各个节点
+    var oUser = document.getElementById('user');
+    console.log(oUser);
+    var oCommon = document.getElementsByClassName('common');
+    console.log(oCommon);
+    var oUl = document.getElementsByClassName('box');
+    var oLis = document.getElementsByTagName('li');
+    var john = oUl[0].getElementsByTagName('li')[0];
+    console.log(oUl);
+    console.log(oLis);
+    console.log(john);
+    //querySelector
+    var oUser2 = document.querySelector('#user');
+    console.log(oUser2);
+
+    var oLis2 = document.querySelectorAll('li');
+    console.log(oLis2);
+
+    var oCommons = document.querySelectorAll('.common');
+    console.log(oCommons);
+    //创建标签
+    var oLi = document.createElement('li');
+    oLi.innerHTML = 'append';
+    var oOl = document.getElementById('ol');
+    oOl.append(oLi);
+    // var newLi2 = document.createElement('li');
+    // newLi2.innerHTML = 'prepend';
+    // ol.prepend(newLi2);
+    // ol.before('before');
+    // ol.after('after');
+    //给时间增加时间反馈，绑定事件函数
+    //Ajax之前，css通过link tag引入，js用script引入
+    //同步通信：http request等待的过程中user什么都不能做    异步：不用等待，颗连续发送多次请求
+</script>
+<script>
+    //Ajax:browser向后端发送请求，好处：局部更新,不需要reload页面
+    //前端到肉段通信需要传：method, urlm data, req res
+    // 1. Create a new XMLHttpRequest object，ajax实例
+    var xhr = new XMLHttpRequest();
+
+    // 2. Configure it: GET-request for the URL
+    xhr.open('GET', 'http://petstore.swagger.io/v2/swagger.json', true);
+
+    // 3. Send the request over the network
+    xhr.send();
+
+    // 4. This will be called after the response is received
+    xhr.onload = function() {
+        // analyze HTTP status of the response
+        if (xhr.status != 200) {
+            console.log('error ', xhr.status)
+        } else { // show the result
+            console.log(xhr.responseText)
+        }
+    };
+38
+</script>
+</body>
+</html>
