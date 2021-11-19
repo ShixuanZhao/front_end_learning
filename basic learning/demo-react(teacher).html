@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+  <!--    <script src="https://unpkg.com/react@^16/umd/react.production.min.js"></script>-->
+  <!--    <script src="https://unpkg.com/react-dom@16.13.0/umd/react-dom.production.min.js"></script>-->
+  <!--    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>-->
+</head>
+<body>
+<h1>React</h1>
+<div id="app"></div>
+
+<script type="text/babel">
+  // 1. how to use React
+  //  - React -> core -> components, virtual dom, life cycle
+  //  - React-dom -> vdom <-> dom
+  //  - babel -> compile
+
+  // 2. how to create v-dom elem
+  // const el1 = React.createElement('h2', { className: 'box'}, 'hello react!');
+
+  // 3. JSX
+  //  - js + html
+  //  - expression -> { }
+  //  - X for loop, if, while
+  // const el1 = <h2 className="box">hello react!!</h2>;
+  // const a = 10;
+  // const str = 'this is a str';
+  // const bool = true;
+  // const arr = [<li key="1">first</li>, <li key="2">second</li>, <li key="3">third</li>];
+  // const obj = { name: "Joe", age: 10 }
+  // const add = (a, b) => a + b;
+  // const ele = <div>
+  //     <p>{ a }</p>
+  //     <p>{ str },  { a }</p>
+  //     <p>{ bool }</p>
+  //     <ul>{ arr }</ul>
+  //     <p>{ JSON.stringify(obj) }</p>
+  //     <p>{ obj.name }, { obj.age }</p>
+  //     <hr />
+  //     function:
+  //     <p>{ add(3, 6) }</p>
+  //     <hr />
+  //     <p>  I have a { 3 < 5 ? 'dog' : 'cat' } </p>
+  // </div>;
+
+  // 4. Components
+  //  - class-based - function-based
+  // function ComponentName() {
+  //     return ve
+  // }
+
+  // function Hello() {
+  //     return <div>
+  //         <h2>Hello!</h2>
+  //         <ul>
+  //             <li>Apple</li>
+  //             <li>Pear</li>
+  //         </ul>
+  //     </div>;
+  // };
+  // const ele = <div>
+  //     <Hello />
+  //     <Hello />
+  // </div>
+  // class HelloApp extends React.Component {
+  //     // optional
+  //     constructor() {
+  //         super();
+  //     }
+  //
+  //     // required
+  //     render() {
+  //         return <div>
+  //             <p>Hello App</p>
+  //             <p>I am a React Component</p>
+  //         </div>
+  //     }
+  // }
+
+  function Hello(props) {
+    console.log(props);
+    const { personData, fruit } = props;
+    return <div>
+      <p>this is a Hello Component</p>
+      <p>Hello { personData.name }</p>
+      <p>I like { fruit }</p>
+    </div>
+  }
+
+  const person = { name: 'Joe', age: 20 };
+
+  class Hello2 extends React.Component{
+
+    render() {
+      return <div>
+        <p>this is a Hello Component</p>
+        <p>Hello { this.props.personData.name }</p>
+        <p>I like { this.props.fruit }</p>
+      </div>
+    }
+  }
+
+  ReactDOM.render(
+          <Hello2 personData={person} fruit={"pear"}/>,
+          document.getElementById('app')
+  )
+</script>
+</body>
+</html>

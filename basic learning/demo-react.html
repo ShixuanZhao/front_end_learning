@@ -10,10 +10,11 @@
 
 </head>
 <body>
+//真实dom
 <h1>React</h1>
-
 <!--虚拟dom挂载点-->
 <div id="root"></div>
+
 <script type="text/babel">
   //1.how to use react
   //react->core->components, virtual dom, life cycle
@@ -25,6 +26,7 @@
   // render DOM
   //3jsx  js + html
   const el1 = <h2 className="box">hello react!!</h2>;
+  const el2 = <h2 className="aaa">hello react</h2>
   // ReactDOM.render(
   //         ele1,
   //         document.getElementById('app')
@@ -51,6 +53,7 @@
 
   ReactDOM.render(
       <Hello person={person}/>,
+      //挂载到真实dom上，react是虚拟dom
       document.getElementById('root')
   );
 
